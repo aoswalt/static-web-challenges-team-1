@@ -2,19 +2,19 @@
 
 function buildCard(text) {
   return "" +
-    "<div class='card'>" +
-      "<input type='color' class='bg-color'>" +
-      "<input type='color' class='fg-color'>" +
-      "<input type='button' class='delete-button' value='Delete'>" +
-      `<p>${text}</p>` +
-    "</div>";
+    "<input type='color' class='bg-color'>" +
+    "<input type='color' class='fg-color'>" +
+    "<input type='button' class='delete-button' value='Delete'>" +
+    `<p>${text}</p>`;
 }
 
 function addCard(text) {
   var cardWrapper = document.getElementById("card-wrapper");
-  cardWrapper.innerHTML += buildCard(text);
+  var card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML += buildCard(text);
+  cardWrapper.appendChild(card);
 
-  var card = cardWrapper.children[cardWrapper.children.length - 1];
   card.getElementsByClassName("bg-color")[0].onchange = setBgColor;
   card.getElementsByClassName("fg-color")[0].onchange = setFgColor;
   card.getElementsByClassName("delete-button")[0].onclick = deleteCard;
