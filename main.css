@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;;
+}
+
+#card-wrapper {
+  text-align: center;
+}
+
+.card {
+  display: inline-block;
+  border: 1px solid lightgrey;
+  max-width: 33%;
+  height: 25rem;
+  padding: 1rem;
+}
